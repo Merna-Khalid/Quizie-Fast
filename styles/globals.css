@@ -1,0 +1,81 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: text;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.translate-z-0 {
+  transform: translateZ(0px);
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background-color: #f13024;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: #f13024;
+}
+
+.user-select-text {
+  user-select: text;
+}
+
+.p {
+  user-select: text;
+}
+
+@layer base {
+  html {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-gradient-to-r from-violet-900 to-indigo-600 leading-relaxed;
+  }
+  .h-dynamic {
+    height: 100%; /* Default to h-screen */
+    min-height: 100vh; /* Minimum height of h-screen */
+  }
+  .page {
+    @apply w-full;
+  }
+  .h1 {
+    @apply text-[35px] leading-tight md:text-[54px] md:leading-[1.3] mb-4 font-semibold;
+  }
+  .h2 {
+    @apply text-[35px] leading-tight md:text-[54px] md:leading-[1.3] mb-4 font-semibold;
+  }
+  p {
+    @apply leading-[1.8] text-white/60 font-light;
+  }
+
+  .btn,
+  .input {
+    @apply h-[52px];
+  }
+  .input {
+    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+  }
+  .input,
+  .textarea {
+    @apply bg-transparent outline-none focus:ring-1 border border-white/20 placeholder:text-white/30 placeholder:font-light;
+  }
+  .textarea {
+    @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
+  }
+
+  .user-select-text {
+    user-select: text;
+  }
+
+}

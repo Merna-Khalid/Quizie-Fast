@@ -36,6 +36,9 @@ Before running Quizie Fast, ensure you have the following installed:
    ```bash
    npm run dev
 
+## Demo website
+quizie-fast.vercel.app
+
 
 ## License
 

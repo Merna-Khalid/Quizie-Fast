@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   return (
-    <header className='center'>
+    <header className='center z-50'>
       
         <h1 className="text-5xl leading-tight md:text-6xl md:leading-1.3 mb-8 font-semibold text-center">
             <Link href={'/'} className="hover:text-purple-500 transition duration-300 transform hover:scale-105">

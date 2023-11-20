@@ -1,22 +1,22 @@
 {
-    "id": "chatcmpl-8My6sPN0vnI03gHpgUrzBv3V5fDum",
-    "object": "chat.completion",
-    "created": 1700484970,
-    "model": "gpt-3.5-turbo-0613",
-    "choices": [
-      {
-        "index": 0,
-        "message": {
-          "role": "assistant",
-          "content": "QUIZ: BIOLOGY\n\n1. What is the primary function of red blood cells?\n   a) Carry oxygen to body tissues\n   b) Fight off infections\n   c) Transport nutrients\n   d) Regulate body temperature\n\n2. Which of the following is not a function of the liver?\n   a) Detoxification\n   b) Protein synthesis\n   c) Carbohydrate storage\n   d) Muscle contraction\n\n3. Where does fertilization occur in the human reproductive system?\n   a) Ovaries\n   b) Uterus\n   c) Fallopian tubes\n   d) Vagina\n\n4. What is the main role of chlorophyll in photosynthesis?\n   a) Absorb sunlight\n   b) Release oxygen\n   c) Convert carbon dioxide into glucose\n   d) Break down glucose molecules\n\n5. Which of the following is an example of an excretory organ in humans?\n   a) Kidneys\n   b) Pancreas\n   c) Small intestine\n   d) Spleen\n\n6. What is the longest bone in the human body?\n   a) Femur\n   b) Radius\n   c) Ulna\n   d) Tibia\n\n7. Darwin's theory of evolution is based on the concept of:\n   a) Inheritance of acquired characteristics\n   b) Natural selection\n   c) Genetic mutation\n   d) Punctuated equilibrium\n\n8. What is the largest organ in the human body?\n   a) Liver\n   b) Brain\n   c) Lungs\n   d) Skin\n\n9. Which of the following is responsible for transmitting nerve impulses within the body?\n   a) Neurons\n   b) White blood cells\n   c) Red blood cells\n   d) Platelets\n\n10. What is the basic unit of heredity?\n    a) Chromosome\n    b) Gene\n    c) Nucleus\n    d) Mitochondrion\n\nANSWERS:\n1. a) Carry oxygen to body tissues\n2. d) Muscle contraction\n3. c) Fallopian tubes\n4. a) Absorb sunlight\n5. a) Kidneys\n6. a) Femur\n7. b) Natural selection\n8. d) Skin\n9. a) Neurons\n10. b) Gene"
-        },
-        "finish_reason": "stop"
-      }
-    ],
-    "usage": {
-      "prompt_tokens": 68,
-      "completion_tokens": 488,
-      "total_tokens": 556
+  "id": "chatcmpl-8N5bco4Pf4vWHreD3SYW8u7BQeTBC",
+  "object": "chat.completion",
+  "created": 1700513784,
+  "model": "gpt-3.5-turbo-1106",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Sure, here's a quiz about food:\n\n1. What is the main ingredient in guacamole?\n   a) Avocado\n   b) Tomato\n   c) Onion\n   d) Lemon\n\n2. What is the national dish of Japan?\n   a) Sushi\n   b) Tempura\n   c) Ramen\n   d) Yakitori\n\n3. What is the key ingredient in a frittata?\n   a) Rice\n   b) Pasta\n   c) Egg\n   d) Potato\n\n4. What is the main ingredient in hummus?\n   a) Chickpeas\n   b) Lentils\n   c) Black beans\n   d) Kidney beans\n\n5. What type of food is a croissant?\n   a) Pastry\n   b) Bread\n   c) Cake\n   d) Cookie\n\n6. What is the primary ingredient in paella?\n   a) Fish\n   b) Chicken\n   c) Rice\n   d) Pasta\n\n7. What is the traditional main ingredient in borscht?\n   a) Cabbage\n   b) Beets\n   c) Carrots\n   d) Potatoes\n\n8. What is the main ingredient in risotto?\n   a) Couscous\n   b) Quinoa\n   c) Arborio rice\n   d) Basmati rice\n\n9. What is the main ingredient in gazpacho?\n   a) Cucumbers\n   b) Tomatoes\n   c) Peppers\n   d) Onions\n\n10. What kind of cheese is typically used in a classic Caesar salad?\n    a) Parmesan\n    b) Cheddar\n    c) Blue cheese\n    d) Mozzarella\n\nANSWERS:\n1. a) Avocado\n2. a) Sushi\n3. c) Egg\n4. a) Chickpeas\n5. a) Pastry\n6. c) Rice\n7. b) Beets\n8. c) Arborio rice\n9. b) Tomatoes\n10. a) Parmesan"
+      },
+      "finish_reason": "stop"
     }
-  }
-  
+  ],
+  "usage": {
+    "prompt_tokens": 135,
+    "completion_tokens": 435,
+    "total_tokens": 570
+  },
+  "system_fingerprint": "fp_eeff13170a"
+}

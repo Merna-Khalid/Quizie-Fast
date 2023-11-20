@@ -37,7 +37,7 @@ const QuizPageWrapper: React.FC = () => {
   if (!quizData) {
     return <QuizPage quizData={mockQuizData} />;
   }  
-  console.log(quizData);
+
   return <QuizPage quizData={quizData} />;
 };
 

@@ -24,7 +24,23 @@ const QuizPromptInput: React.FC = () => {
 
     const handleSubmit = async () => {
 
-        const combinedMessage = `Create quiz of 10 questions and four choices each in the format of [question number] question ? \n [answer number alphabetically a), b), c), d)] answer and provide the answers at the end in the following format ANSWERS: [question number]. [full answer], ...\n\n${inputValue}`;
+        const combinedMessage = `Create quiz of 10 questions and 4 choices about ${inputValue} in the format of 
+        1. question1 ?
+        a) answer1
+        b) answer2
+        c) answer3
+        d) answer4
+        
+        2. question2 ?
+        a) answer1
+        b) answer2
+        c) answer3
+        d) answer4
+        
+        and provide the answers at the end in the following format ANSWERS: 
+        [question number]. [full answer] 
+            ...
+        [last question number]. [full answer]\n`;
 
 
         try {
@@ -34,7 +50,7 @@ const QuizPromptInput: React.FC = () => {
             const response = await sendToOpenAI(combinedMessage);
 
 
-            // const response = jsonData.choices[0].message.content;
+            // const response = jsonData;
             
             const quizDataOut = parseApiResponse(response.choices[0].message.content);
             if (quizDataOut) {

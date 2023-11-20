@@ -29,6 +29,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ quizData }) => {
   const handleSubmission = () => {
     // Compare user answers with final answers in quizData
     const correctAnswers = quizData['ANSWERS'] as string[];
+
     const userGrade = calculateGrade(userAnswers, correctAnswers);
 
     // Redirect to result page with the grade
@@ -38,7 +39,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ quizData }) => {
   const calculateGrade = (userAnswers: string[], correctAnswers: string[]): number => {
         const score = userAnswers.reduce((totalScore, userAnswer, index) => {
         
-        if (userAnswer === correctAnswers[index].split(')')[1].trim()) {
+        if (userAnswer === correctAnswers[index].substring(6)) {
           return totalScore + 1;
         }
         return totalScore;

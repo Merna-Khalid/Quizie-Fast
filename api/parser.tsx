@@ -12,24 +12,23 @@ interface QuizData {
 const parseApiResponse = (content: string): QuizData | null => {
     try {
 
-      // const contentStart = apiResponse.indexOf('"content": "') + '"content": "'.length;
-      // const contentEnd = apiResponse.indexOf('",', contentStart);
-
-      // Extract the content
-      // const content = apiResponse.slice(contentStart, contentEnd);
-
-      // Initialize an object to store questions and answers
+      
       const quizData: QuizData = {};
       const finalAnswers: string[] = [];
   
-      const questionRegex = /\d+\.\s([^?]+)\?\s([\s\S]*?)(?=\d+\.\s|$)/g;
+      const questionRegex = /\d+\.\s([^?]+)\?\s([\s\S]*?)(?=\d+\.|$)/g;
       const answerRegex = /[a-d]\)\s(.+?)\n/g;
 
       // Extract and store questions and answers
-      const questionsMatches = content.match(questionRegex);
+
+      // Split content by 'ANSWERS' and take only the part before 'ANSWERS'
+      const contentWithoutAnswers = content.split('ANSWERS')[0];
+      const questionsMatches = contentWithoutAnswers.match(questionRegex);
+      // console.log(questionsMatches);
+
       if (questionsMatches) {
         questionsMatches.forEach((questionMatch: string, index: number) => {
-          const question = questionMatch.match(/\d+\.\s([^?]+)\?\s/)![1];
+          const question = questionMatch.match(/\d+\.\s([^?]+)\?\s/)![1].trim();
 
           // Extract answers
           const answers: string[] = [];
@@ -43,17 +42,14 @@ const parseApiResponse = (content: string): QuizData | null => {
         });
       }
 
-      const finalAnswersMatch = content.match(/ANSWERS:\n([\s\S]+)$/);
-      if (finalAnswersMatch) {
-        const finalAnswersContent = finalAnswersMatch[1];
-        finalAnswers.push(...finalAnswersContent.split('\n'));
-      }
-
+      
+      const finalAnswersContent = content.split('ANSWERS:\n')[1];
+      finalAnswers.push(...finalAnswersContent.split('\n'));
 
       // Add the final answers array to the quizData object
-      console.log(finalAnswers);
       quizData['ANSWERS'] = finalAnswers;
-  
+
+      // console.log(quizData);
       return quizData;
     } catch (error) {
       console.error('Error parsing API response:', error);

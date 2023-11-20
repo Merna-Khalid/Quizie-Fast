@@ -28,11 +28,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         <div className='pb-0'>
-          <div className="min-h-screen">
+          <div>
             {children}
           </div>
 
-          <div className='bg-black flex items-center justify-center gap-y-4 bottom-0 w-full pb-1'>
+          <div className='bg-black fixed items-center justify-center gap-y-4 bottom-0 w-full pb-0'>
             <Footer />
           </div>
         </div>

@@ -53,45 +53,48 @@ const QuizPage: React.FC<QuizPageProps> = ({ quizData }) => {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-4">Quiz Page</h1>
-      {/* Carousel Container */}
-      <Carousel
-        showArrows={true}
-        showStatus={false}
-        showThumbs={false}
-        dynamicHeight={true}
-        width="50%"
-        selectedItem={0}
-        onChange={(index) => console.log(`Slide changed to ${index}`)}
-        className="flex justify-center"
-      >
-        {/* Map through questions and display slides */}
-        {Object.keys(quizData)
-          .filter((key) => key !== 'ANSWERS') // Exclude final answers
-          .map((questionKey, index) => (
-            <div key={questionKey} className="w-full">
-              {/* Slide for each question */}
-              <div className="bg-black p-6 rounded-md shadow-md bg-opacity-50">
-                <h2 className="text-xl font-bold mb-4">{questionKey}</h2>
-                {/* Map through answers and display radio buttons */}
-                {quizData[questionKey].map((answer, answerIndex) => (
-                  <div key={answerIndex} className="mb-2">
-                    <input
-                      type="radio"
-                      id={`${questionKey}-${answerIndex}`}
-                      name={`question-${index}`}
-                      value={answer}
-                      checked={userAnswers[index] === answer}
-                      onChange={(event) => handleAnswerChange(answer, index, event)}
-                    />
-                    <label htmlFor={`${questionKey}-${answerIndex}`} className="ml-2">
-                      {answer}
-                    </label>
-                  </div>
-                ))}
+      <div style={{ maxWidth: '80%', margin: '0 10' }}>
+        {/* Carousel Container */}
+        <Carousel
+          showArrows={true}
+          showStatus={false}
+          showThumbs={false}
+          dynamicHeight={true}
+          selectedItem={0}
+          onChange={(index) => console.log(`Slide changed to ${index}`)}
+          className="flex justify-center focus:ring-2 focus:ring-green-300"
+        >
+          {/* Map through questions and display slides */}
+          {Object.keys(quizData)
+            .filter((key) => key !== 'ANSWERS') // Exclude final answers
+            .map((questionKey, index) => (
+              <div key={questionKey} className="w-full">
+                {/* Slide for each question */}
+                <div className="bg-black p-6 rounded-md shadow-md bg-opacity-50">
+                  <h2 className="text-xl font-bold mb-4 break-words">{questionKey}</h2>
+                  {/* Map through answers and display radio buttons */}
+                  {quizData[questionKey].map((answer, answerIndex) => (
+                    <div key={answerIndex} className="mb-2 flex justify-center">
+                      <div className='items-center'>
+                        <input
+                          type="radio"
+                          id={`${questionKey}-${answerIndex}`}
+                          name={`question-${index}`}
+                          value={answer}
+                          checked={userAnswers[index] === answer}
+                          onChange={(event) => handleAnswerChange(answer, index, event)}
+                        />
+                        <label htmlFor={`${questionKey}-${answerIndex}`} className="ml-2 break-words">
+                          {answer}
+                        </label>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-      </Carousel>
+            ))}
+        </Carousel>
+      </div>
       {/* Submit button */}
       <button
         onClick={handleSubmission}

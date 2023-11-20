@@ -79,3 +79,51 @@
   }
 
 }
+
+/* Hide the default radio button */
+input[type="radio"] {
+  display: none;
+}
+
+/* Style the custom radio button */
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 40px; /* Adjust as needed */
+  cursor: pointer;
+  display: inline-block; 
+}
+
+/* Style the custom indicator (dot, in this case) */
+input[type="radio"] + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust as needed */
+  height: 20px; /* Adjust as needed */
+  border: 2px solid #000; /* Adjust color and size as needed */
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(125, 124, 125, 0.9), #000000); /* Gradient colors */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+/* Style the custom indicator when the radio button is checked */
+input[type="radio"]:checked + label:before {
+  background: linear-gradient(45deg, #009900, #4B0082);
+  border-color: #009900;
+  animation: glow 0.7s ease infinite;
+}
+
+/* Animation for the custom indicator when selected */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 139, 0, 0.7); /* Adjust color and size as needed */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 139, 0, 0.7); /* Adjust color and size as needed */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 139, 0, 0.7); /* Adjust color and size as needed */
+  }
+}

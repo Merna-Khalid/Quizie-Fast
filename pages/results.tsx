@@ -11,11 +11,11 @@ const Results = () => {
 
   return (
     <div className='flex-column justify-center items-center'>
-      <h1 className='text-3xl leading-tight md:text-4xl md:leading-1.3 mb-8 font-semibold text-center'>Results</h1>
+      <h1 className='text-5xl leading-tight md:text-4xl md:leading-1.3 mb-8 font-semibold text-center'>Results</h1>
       <div className='bg-black/50'>
-        <p className='text-center md:text-3xl'>Your Grade: {userGrade}</p>
+        <p className='text-center text-3xl md:text-5xl'>Your Grade: {userGrade}</p>
       </div>
-      
+         
     </div>
   );
 };

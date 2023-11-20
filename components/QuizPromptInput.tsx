@@ -105,23 +105,23 @@ const QuizPromptInput: React.FC = () => {
     };
 
     return (
-    <div className="max-w-md mx-auto my-8">
-        <label className="block text-white text-lg mb-2">What do you wish to be quizzed about?</label>
-        <div className="flex">
-        <input
-            type="text"
-            className="flex-1 p-2 mr-2 bg-white text-black rounded-l z-50"
-            placeholder="Enter your topic"
-            value={inputValue}
-            onChange={handleInputChange}
-        />
-        <button
-            className="bg-blue-500 text-white p-2 rounded-r transform hover:scale-105 transition-transform duration-300 ease-in-out hover:bg-blue-600 focus:outline-none"
-            onClick={handleSubmit}
-            disabled={isLoading}
-        >
-            {isLoading ? 'Submitting...' : 'Submit'}
-        </button>
+    <div className="max-w-md mx-auto my-8 items-center justify-center">
+        <label className="flex  items-center justify-center block text-white text-lg mb-2">What do you wish to be quizzed about?</label>
+        <div className="flex items-center justify-center">
+            <input
+                type="text"
+                className="p-2 mr-2 bg-white text-black rounded-l z-50"
+                placeholder="Enter your topic"
+                value={inputValue}
+                onChange={handleInputChange}
+            />
+            <button
+                className="bg-blue-500 text-white p-2 rounded-r transform hover:scale-105 transition-transform duration-300 ease-in-out hover:bg-blue-600 focus:outline-none"
+                onClick={handleSubmit}
+                disabled={isLoading}
+            >
+                {isLoading ? 'Submitting...' : 'Submit'}
+            </button>
 
         </div>
 

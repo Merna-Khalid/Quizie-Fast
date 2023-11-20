@@ -35,10 +35,18 @@ const QuizPageWrapper: React.FC = () => {
   };
 
   if (!quizData) {
-    return <QuizPage quizData={mockQuizData} />;
+    return (
+      <div className='h-full w-full items_center justify-center fixed'>
+        <QuizPage quizData={mockQuizData} />
+      </div>
+    );
   }  
-
-  return <QuizPage quizData={quizData} />;
+  
+  return (
+    <div className='h-full w-full items_center justify-center fixed'>
+      <QuizPage quizData={quizData} />
+    </div>
+  );
 };
 
 export default QuizPageWrapper;

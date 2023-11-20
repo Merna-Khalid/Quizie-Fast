@@ -75,7 +75,7 @@ const QuizPromptInput: React.FC = () => {
             'Authorization': `Bearer ${apiKey}`,
             },
             body: JSON.stringify({
-            model: "gpt-3.5-turbo",
+            model: "gpt-3.5-turbo-1106",
             stream: false,
             messages: [{ role: 'system', content: 'You are a helpful assistant.' }, { role: 'user', content: message }],
             }),
